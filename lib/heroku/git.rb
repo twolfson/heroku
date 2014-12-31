@@ -10,16 +10,16 @@ module Heroku::Git
     if v < Version.parse('1.8.5.6')
       return true
     end
-    if v > Version.parse('1.9') && v < Version.parse('1.9.5')
+    if v >= Version.parse('1.9') && v < Version.parse('1.9.5')
       return true
     end
-    if v > Version.parse('2.0') && v < Version.parse('2.0.5')
+    if v >= Version.parse('2.0') && v < Version.parse('2.0.5')
       return true
     end
-    if v > Version.parse('2.1') && v < Version.parse('2.1.4')
+    if v >= Version.parse('2.1') && v < Version.parse('2.1.4')
       return true
     end
-    if v > Version.parse('2.2') && v < Version.parse('2.2.1')
+    if v >= Version.parse('2.2') && v < Version.parse('2.2.1')
       return true
     end
     return false
