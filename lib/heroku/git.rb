@@ -1,12 +1,12 @@
 module Heroku::Git
   def self.check_git_version
-    if git_is_insecure
+    if git_is_insecure(git_version)
       warn_about_insecure_git
     end
   end
 
-  def self.git_is_insecure
-    v = Version.parse(git_version)
+  def self.git_is_insecure(version)
+    v = Version.parse(version)
     if    v < Version.parse('1.9') && v < Version.parse('1.8.5.6')
       return true
     elsif v < Version.parse('2.0') && v < Version.parse('1.9.5')
