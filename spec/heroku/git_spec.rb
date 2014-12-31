@@ -1,6 +1,9 @@
 require "heroku/git"
+require "heroku/helpers"
 
 describe Heroku::Git do
+  include Heroku::Helpers
+
   # Secure versions from http://article.gmane.org/gmane.linux.kernel/1853266
   it "determines an insecure 1.7 version is insecure" do
     expect(Heroku::Git.git_is_insecure('1.7')).to eq(true)

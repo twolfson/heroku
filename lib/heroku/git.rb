@@ -1,3 +1,5 @@
+require "heroku/helpers"
+
 module Heroku::Git
   extend Heroku::Helpers
 
