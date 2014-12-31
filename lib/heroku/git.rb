@@ -1,5 +1,8 @@
 module Heroku::Git
+  extend Heroku::Helpers
+
   def self.check_git_version
+    return unless running_on_windows? || running_on_a_mac?
     if git_is_insecure(git_version)
       warn_about_insecure_git
     end
