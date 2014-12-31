@@ -19,8 +19,8 @@ module Heroku::Git
       if v < Version.parse('2.0.5')
         return true
       end
-    elsif v < Version.parse('2.2')
-      if v < Version.parse('2.2.1')
+    elsif v < Version.parse('2.2.1')
+      if v < Version.parse('2.2')
         return true
       end
     end

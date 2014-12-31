@@ -1,6 +1,7 @@
 require "heroku/git"
 
 describe Heroku::Git do
+  # Secure versions from http://article.gmane.org/gmane.linux.kernel/1853266
   it "determines an insecure 1.8 version is insecure" do
     expect(Heroku::Git.git_is_insecure('1.8.5')).to eq(true)
   end
@@ -23,6 +24,14 @@ describe Heroku::Git do
 
   it "determines an secure 2.0 version is secure" do
     expect(Heroku::Git.git_is_insecure('2.0.5')).to eq(false)
+  end
+
+  it "determines an insecure 2.1 version is insecure" do
+    expect(Heroku::Git.git_is_insecure('2.1')).to eq(true)
+  end
+
+  it "determines an secure 2.1 version is secure" do
+    expect(Heroku::Git.git_is_insecure('2.1.4')).to eq(false)
   end
 
   it "determines an insecure 2.2 version is insecure" do
